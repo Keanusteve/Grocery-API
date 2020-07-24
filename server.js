@@ -49,7 +49,7 @@ app.get("/api/products/:id", (request,response) =>{
    //product = undefined => resolves to false
    // !undefined => !false => resolves to true
    if(!product) {
-    response.send(`prouct with id${productId} not found`);
+    response.send(`product with id${productId} not found`);
     return;
    }
    //if here we can assume the product does exist - response that it was found
@@ -131,7 +131,7 @@ app.delete("/api/products/:id", (request,response)=> {
     }
     products.splice(productIndex,1);
     const jsonPayload ={
-        produts: products,
+        products: products,
     };
     fs.writeFileSync("products.json", JSON.stringify(jsonPayload));
     response.send("You have successfuly deleted the item");
